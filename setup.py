@@ -1,6 +1,9 @@
 from setuptools import setup
 
-setup(
-    name='easy_gold',
-    packages=['easy_gold'],
-)
+project_name = "easy_gold"
+
+if __name__ == '__main__':
+    setup(
+        name=project_name,
+        packages=[project_name],
+    )

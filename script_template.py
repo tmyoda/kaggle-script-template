@@ -4,7 +4,6 @@ import os
 from pathlib import Path
 from typing import Dict
 
-
 # this is base64 encoded source code
 file_data: Dict = {file_data}
 
@@ -21,4 +20,4 @@ def run(command):
 
 
 run('python setup.py develop --install-dir /kaggle/working')
-run('python easy_gold/main.py')
+run('python {project_name}/main.py')
