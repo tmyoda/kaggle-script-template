@@ -1,6 +1,7 @@
 import gzip
 import base64
 import os
+from subprocess import PIPE
 from pathlib import Path
 from typing import Dict
 
@@ -16,7 +17,9 @@ for path, encoded in file_data.items():
 
 
 def run(command):
-    os.system('export PYTHONPATH=${PYTHONPATH}:/kaggle/working && ' + command)
+    proc = subprocess.run('export PYTHONPATH=${PYTHONPATH}:/kaggle/working && ' + command, shell=True, stdout=PIPE, stderr=PIPE, text=True)
+    print(proc.stdout)
+    print(proc.stderr)
 
 
 run('python setup.py develop --install-dir /kaggle/working')
